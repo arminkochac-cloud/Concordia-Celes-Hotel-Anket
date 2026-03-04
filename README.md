@@ -1,2 +1,3 @@
-# Concordia-Celes-Hotel-Anket-Final
-Hotel anket uygulaması - final versiyon
+README.md
+hotel_survey_final_all.py
+requirements.txt
