@@ -4,7 +4,7 @@ import qrcode
 from PIL import Image
 from io import BytesIO
 
-st.title("Concordia Celes Hotel Anket")
+st.title("Concordia Celes Hotel Anketi")
 
 # Örnek soru
 isim = st.text_input("Adınız")
@@ -13,13 +13,11 @@ yorum = st.text_area("Yorumunuz")
 
 if st.button("Gönder"):
     st.success("Teşekkürler! Yanıtınız kaydedildi.")
-    # Yanıtı kaydet (CSV)
     df = pd.DataFrame([[isim, memnuniyet, yorum]], columns=["İsim","Memnuniyet","Yorum"])
     df.to_csv("anket_sonuclari.csv", mode='a', index=False, header=False)
 
 # QR Kod oluşturma
-# Cloud URL kullanıyoruz, LocalTunnel artık gerekli değil
-app_url = "https://arminkochac-cloud-concordia-celes-hotel-anket-final.streamlit.app"
+app_url = "https://share.streamlit.io/arminkochac-cloud/Concordia-Celes-Hotel-Anket-Final/main/app.py"
 qr = qrcode.QRCode(box_size=10, border=4)
 qr.add_data(app_url)
 qr.make(fit=True)
